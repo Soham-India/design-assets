@@ -1,0 +1,443 @@
+{
+  "ui": [
+    {
+      "id": "home",
+      "displayName": "Home",
+      "path": "ui/home.png"
+    },
+    {
+      "id": "search",
+      "displayName": "Search",
+      "path": "ui/search.png"
+    },
+    {
+      "id": "settings",
+      "displayName": "Settings",
+      "path": "ui/settings.png"
+    },
+    {
+      "id": "user",
+      "displayName": "User",
+      "path": "ui/user.png"
+    },
+    {
+      "id": "users",
+      "displayName": "Users",
+      "path": "ui/users.png"
+    },
+    {
+      "id": "heart",
+      "displayName": "Heart",
+      "path": "ui/heart.png"
+    },
+    {
+      "id": "star",
+      "displayName": "Star",
+      "path": "ui/star.png"
+    },
+    {
+      "id": "bookmark",
+      "displayName": "Bookmark",
+      "path": "ui/bookmark.png"
+    },
+    {
+      "id": "bell",
+      "displayName": "Bell",
+      "path": "ui/bell.png"
+    },
+    {
+      "id": "lock",
+      "displayName": "Lock",
+      "path": "ui/lock.png"
+    },
+    {
+      "id": "unlock",
+      "displayName": "Unlock",
+      "path": "ui/unlock.png"
+    },
+    {
+      "id": "eye",
+      "displayName": "Eye",
+      "path": "ui/eye.png"
+    },
+    {
+      "id": "calendar",
+      "displayName": "Calendar",
+      "path": "ui/calendar.png"
+    },
+    {
+      "id": "clock",
+      "displayName": "Clock",
+      "path": "ui/clock.png"
+    },
+    {
+      "id": "trash",
+      "displayName": "Trash",
+      "path": "ui/trash.png"
+    },
+    {
+      "id": "edit",
+      "displayName": "Edit",
+      "path": "ui/edit.png"
+    },
+    {
+      "id": "plus",
+      "displayName": "Plus",
+      "path": "ui/plus.png"
+    },
+    {
+      "id": "minus",
+      "displayName": "Minus",
+      "path": "ui/minus.png"
+    },
+    {
+      "id": "check",
+      "displayName": "Check",
+      "path": "ui/check.png"
+    },
+    {
+      "id": "close",
+      "displayName": "Close",
+      "path": "ui/close.png"
+    },
+    {
+      "id": "menu",
+      "displayName": "Menu",
+      "path": "ui/menu.png"
+    },
+    {
+      "id": "more-horizontal",
+      "displayName": "More Horizontal",
+      "path": "ui/more-horizontal.png"
+    },
+    {
+      "id": "more-vertical",
+      "displayName": "More Vertical",
+      "path": "ui/more-vertical.png"
+    },
+    {
+      "id": "filter",
+      "displayName": "Filter",
+      "path": "ui/filter.png"
+    },
+    {
+      "id": "grid",
+      "displayName": "Grid",
+      "path": "ui/grid.png"
+    },
+    {
+      "id": "list",
+      "displayName": "List",
+      "path": "ui/list.png"
+    },
+    {
+      "id": "info",
+      "displayName": "Info",
+      "path": "ui/info.png"
+    },
+    {
+      "id": "help",
+      "displayName": "Help",
+      "path": "ui/help.png"
+    },
+    {
+      "id": "warning",
+      "displayName": "Warning",
+      "path": "ui/warning.png"
+    },
+    {
+      "id": "shield",
+      "displayName": "Shield",
+      "path": "ui/shield.png"
+    },
+    {
+      "id": "key",
+      "displayName": "Key",
+      "path": "ui/key.png"
+    }
+  ],
+  "arrows": [
+    {
+      "id": "arrow-up",
+      "displayName": "Arrow Up",
+      "path": "arrows/arrow-up.png"
+    },
+    {
+      "id": "arrow-down",
+      "displayName": "Arrow Down",
+      "path": "arrows/arrow-down.png"
+    },
+    {
+      "id": "arrow-left",
+      "displayName": "Arrow Left",
+      "path": "arrows/arrow-left.png"
+    },
+    {
+      "id": "arrow-right",
+      "displayName": "Arrow Right",
+      "path": "arrows/arrow-right.png"
+    },
+    {
+      "id": "chevron-up",
+      "displayName": "Chevron Up",
+      "path": "arrows/chevron-up.png"
+    },
+    {
+      "id": "chevron-down",
+      "displayName": "Chevron Down",
+      "path": "arrows/chevron-down.png"
+    },
+    {
+      "id": "chevron-left",
+      "displayName": "Chevron Left",
+      "path": "arrows/chevron-left.png"
+    },
+    {
+      "id": "chevron-right",
+      "displayName": "Chevron Right",
+      "path": "arrows/chevron-right.png"
+    },
+    {
+      "id": "refresh",
+      "displayName": "Refresh",
+      "path": "arrows/refresh.png"
+    },
+    {
+      "id": "external-link",
+      "displayName": "External Link",
+      "path": "arrows/external-link.png"
+    },
+    {
+      "id": "link",
+      "displayName": "Link",
+      "path": "arrows/link.png"
+    }
+  ],
+  "media": [
+    {
+      "id": "play",
+      "displayName": "Play",
+      "path": "media/play.png"
+    },
+    {
+      "id": "pause",
+      "displayName": "Pause",
+      "path": "media/pause.png"
+    },
+    {
+      "id": "stop",
+      "displayName": "Stop",
+      "path": "media/stop.png"
+    },
+    {
+      "id": "skip-forward",
+      "displayName": "Skip Forward",
+      "path": "media/skip-forward.png"
+    },
+    {
+      "id": "skip-back",
+      "displayName": "Skip Back",
+      "path": "media/skip-back.png"
+    },
+    {
+      "id": "volume",
+      "displayName": "Volume",
+      "path": "media/volume.png"
+    },
+    {
+      "id": "mute",
+      "displayName": "Mute",
+      "path": "media/mute.png"
+    },
+    {
+      "id": "mic",
+      "displayName": "Mic",
+      "path": "media/mic.png"
+    },
+    {
+      "id": "camera",
+      "displayName": "Camera",
+      "path": "media/camera.png"
+    },
+    {
+      "id": "video",
+      "displayName": "Video",
+      "path": "media/video.png"
+    },
+    {
+      "id": "image",
+      "displayName": "Image",
+      "path": "media/image.png"
+    },
+    {
+      "id": "music",
+      "displayName": "Music",
+      "path": "media/music.png"
+    }
+  ],
+  "files": [
+    {
+      "id": "file",
+      "displayName": "File",
+      "path": "files/file.png"
+    },
+    {
+      "id": "folder",
+      "displayName": "Folder",
+      "path": "files/folder.png"
+    },
+    {
+      "id": "copy",
+      "displayName": "Copy",
+      "path": "files/copy.png"
+    },
+    {
+      "id": "clipboard",
+      "displayName": "Clipboard",
+      "path": "files/clipboard.png"
+    },
+    {
+      "id": "paperclip",
+      "displayName": "Paperclip",
+      "path": "files/paperclip.png"
+    },
+    {
+      "id": "download",
+      "displayName": "Download",
+      "path": "files/download.png"
+    },
+    {
+      "id": "upload",
+      "displayName": "Upload",
+      "path": "files/upload.png"
+    },
+    {
+      "id": "save",
+      "displayName": "Save",
+      "path": "files/save.png"
+    }
+  ],
+  "comms": [
+    {
+      "id": "mail",
+      "displayName": "Mail",
+      "path": "comms/mail.png"
+    },
+    {
+      "id": "phone",
+      "displayName": "Phone",
+      "path": "comms/phone.png"
+    },
+    {
+      "id": "chat",
+      "displayName": "Chat",
+      "path": "comms/chat.png"
+    },
+    {
+      "id": "send",
+      "displayName": "Send",
+      "path": "comms/send.png"
+    },
+    {
+      "id": "share",
+      "displayName": "Share",
+      "path": "comms/share.png"
+    }
+  ],
+  "weather": [
+    {
+      "id": "sun",
+      "displayName": "Sun",
+      "path": "weather/sun.png"
+    },
+    {
+      "id": "moon",
+      "displayName": "Moon",
+      "path": "weather/moon.png"
+    },
+    {
+      "id": "cloud",
+      "displayName": "Cloud",
+      "path": "weather/cloud.png"
+    },
+    {
+      "id": "rain",
+      "displayName": "Rain",
+      "path": "weather/rain.png"
+    },
+    {
+      "id": "lightning",
+      "displayName": "Lightning",
+      "path": "weather/lightning.png"
+    },
+    {
+      "id": "snowflake",
+      "displayName": "Snowflake",
+      "path": "weather/snowflake.png"
+    }
+  ],
+  "commerce": [
+    {
+      "id": "cart",
+      "displayName": "Cart",
+      "path": "commerce/cart.png"
+    },
+    {
+      "id": "tag",
+      "displayName": "Tag",
+      "path": "commerce/tag.png"
+    },
+    {
+      "id": "gift",
+      "displayName": "Gift",
+      "path": "commerce/gift.png"
+    },
+    {
+      "id": "credit-card",
+      "displayName": "Credit Card",
+      "path": "commerce/credit-card.png"
+    },
+    {
+      "id": "wallet",
+      "displayName": "Wallet",
+      "path": "commerce/wallet.png"
+    }
+  ],
+  "devices": [
+    {
+      "id": "monitor",
+      "displayName": "Monitor",
+      "path": "devices/monitor.png"
+    },
+    {
+      "id": "smartphone",
+      "displayName": "Smartphone",
+      "path": "devices/smartphone.png"
+    },
+    {
+      "id": "printer",
+      "displayName": "Printer",
+      "path": "devices/printer.png"
+    },
+    {
+      "id": "battery",
+      "displayName": "Battery",
+      "path": "devices/battery.png"
+    },
+    {
+      "id": "wifi",
+      "displayName": "Wi-Fi",
+      "path": "devices/wifi.png"
+    },
+    {
+      "id": "bluetooth",
+      "displayName": "Bluetooth",
+      "path": "devices/bluetooth.png"
+    },
+    {
+      "id": "power",
+      "displayName": "Power",
+      "path": "devices/power.png"
+    }
+  ]
+}
