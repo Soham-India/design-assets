@@ -4,3 +4,5 @@ tools/contact_sheet.png
 __pycache__/
 # regenerable via tools/screenshot-themes.ps1
 themes/screenshots/
+# regenerable via tools/export-tokens.ps1
+themes/export/

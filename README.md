@@ -97,6 +97,14 @@ Each theme folder contains:
 - `tokens.json` — the same tokens as machine-readable JSON (`static`, `light`, `dark`).
 - `tailwind.css` — Tailwind v4 mapping (`@theme inline`) so utilities like `bg-primary`, `text-muted-fg`, `border-line`, `rounded-lg`, `shadow-md` follow the active theme.
 
+Theme tooling (all under `tools/`):
+
+- `new-theme.ps1` — scaffold a new theme from a 5-color palette; derives surfaces, hovers and subtle tints with WCAG AA contrast correction by construction, and registers it in the catalog, preview and this README.
+- `check-contrast.ps1` — verify every text-bearing pair against WCAG AA/AAA.
+- `fix-contrast.ps1` — auto-correct failing pairs with minimal visual shift (`-Apply` to write).
+- `screenshot-themes.ps1` — per-theme + gallery screenshots (regenerates `screenshots/`).
+- `export-tokens.ps1` — export every theme's tokens to SCSS variables, Figma Tokens plugin JSON and an ES module under `themes/export/` (regenerable, gitignored).
+
 The Cyberpunk and Terminal themes are dark-only (no light mode). Both ship an extra `effects.css` with plain-CSS extras, usable with or without Tailwind:
 
 - **Cyberpunk** — keyframes, clip-path panel cuts (`.cut-panel`, `.cut-button`), `.wireframe-grid`, `.blueprint-scan`, `.cyber-scrollbar` and scroll-reveal classes.
