@@ -1,0 +1,147 @@
+/* ==========================================================================
+   Sakura - Cherry-blossom pinks, plum and peach. Soft, romantic and fresh - spring at first bloom.
+   Usage: set data-theme="sakura" on <html>, <body> or any container.
+   Mode:  follows OS preference by default; force with data-mode="light"
+   ========================================================================== */
+
+:root {
+  /* Typography */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: ui-rounded, "Hiragino Maru Gothic ProN", Quicksand, Comfortaa, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+
+  --text-xs: 0.75rem;        --text-xs--line-height: 1.3333;
+  --text-sm: 0.875rem;       --text-sm--line-height: 1.4286;
+  --text-base: 1rem;         --text-base--line-height: 1.5;
+  --text-lg: 1.125rem;       --text-lg--line-height: 1.5556;
+  --text-xl: 1.25rem;        --text-xl--line-height: 1.4;
+  --text-2xl: 1.5rem;        --text-2xl--line-height: 1.3333;
+  --text-3xl: 1.875rem;      --text-3xl--line-height: 1.2;
+  --text-4xl: 2.25rem;       --text-4xl--line-height: 1.1111;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing scale */
+  --spacing: 0.25rem;
+
+  /* Radius personality: soft */
+  --radius-sm: 0.3125rem;
+  --radius-md: 0.5625rem;
+  --radius-lg: 0.8125rem;
+  --radius-xl: 1.125rem;
+  --radius-full: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   Light mode
+   -------------------------------------------------------------------------- */
+[data-theme="sakura"] {
+  color-scheme: light;
+
+  --bg: #fff7f9;
+  --surface: #f4ecee;
+  --surface-raised: #fffbfc;
+  --border: #e3dcde;
+  --text: #292828;
+  --text-muted: #757273;
+  --ring: #b75077;
+  --primary: #b75077;
+  --primary-hover: #a14669;
+  --primary-subtle: #f3dce4;
+  --secondary: #8865a0;
+  --secondary-hover: #78598d;
+  --secondary-subtle: #ece0eb;
+  --accent: #9e654d;
+  --accent-hover: #8b5944;
+  --accent-subtle: #efe0dd;
+  --success: #38704c;
+  --success-subtle: #e0e3df;
+  --warning: #7d6312;
+  --warning-subtle: #efe3d5;
+  --error: #a9433d;
+  --error-subtle: #f4dbdc;
+  --info: #3b6794;
+  --info-subtle: #e0e1eb;
+
+  --shadow-sm: 0 1px 2px rgba(41, 40, 40, 0.08);
+  --shadow-md: 0 4px 14px rgba(41, 40, 40, 0.10);
+  --shadow-lg: 0 14px 36px rgba(41, 40, 40, 0.16);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode - explicit override via attribute or class
+   -------------------------------------------------------------------------- */
+[data-theme="sakura"][data-mode="dark"],
+.dark [data-theme="sakura"]:not([data-mode="light"]) {
+  color-scheme: dark;
+
+  --bg: #241a1f;
+  --surface: #2f252a;
+  --surface-raised: #3e353a;
+  --border: #4e464a;
+  --text: #f0efef;
+  --text-muted: #a7a3a5;
+  --ring: #d790ac;
+  --primary: #d790ac;
+  --primary-hover: #dc9db6;
+  --primary-subtle: #48323b;
+  --secondary: #b69ec6;
+  --secondary-hover: #bfaacd;
+  --secondary-subtle: #413440;
+  --accent: #e6b39e;
+  --accent-hover: #e9bcaa;
+  --accent-subtle: #4b3938;
+  --success: #7fbf94;
+  --success-subtle: #383e39;
+  --warning: #d9b25e;
+  --warning-subtle: #4c3b2d;
+  --error: #e28787;
+  --error-subtle: #4d3034;
+  --info: #80aad9;
+  --info-subtle: #383a48;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.42);
+  --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.52);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode - automatic fallback to OS preference
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  [data-theme="sakura"]:not([data-mode="light"]) {
+    color-scheme: dark;
+
+    --bg: #241a1f;
+    --surface: #2f252a;
+    --surface-raised: #3e353a;
+    --border: #4e464a;
+    --text: #f0efef;
+    --text-muted: #a7a3a5;
+    --ring: #d790ac;
+    --primary: #d790ac;
+    --primary-hover: #dc9db6;
+    --primary-subtle: #48323b;
+    --secondary: #b69ec6;
+    --secondary-hover: #bfaacd;
+    --secondary-subtle: #413440;
+    --accent: #e6b39e;
+    --accent-hover: #e9bcaa;
+    --accent-subtle: #4b3938;
+    --success: #7fbf94;
+    --success-subtle: #383e39;
+    --warning: #d9b25e;
+    --warning-subtle: #4c3b2d;
+    --error: #e28787;
+    --error-subtle: #4d3034;
+    --info: #80aad9;
+    --info-subtle: #383a48;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.42);
+    --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.52);
+  }
+}

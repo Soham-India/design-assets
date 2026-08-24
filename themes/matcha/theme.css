@@ -1,0 +1,147 @@
+/* ==========================================================================
+   Matcha - Whisked green tea, rice-gold and red bean. Calm, natural and balanced.
+   Usage: set data-theme="matcha" on <html>, <body> or any container.
+   Mode:  follows OS preference by default; force with data-mode="light"
+   ========================================================================== */
+
+:root {
+  /* Typography */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: ui-rounded, "Hiragino Maru Gothic ProN", Quicksand, Comfortaa, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+
+  --text-xs: 0.75rem;        --text-xs--line-height: 1.3333;
+  --text-sm: 0.875rem;       --text-sm--line-height: 1.4286;
+  --text-base: 1rem;         --text-base--line-height: 1.5;
+  --text-lg: 1.125rem;       --text-lg--line-height: 1.5556;
+  --text-xl: 1.25rem;        --text-xl--line-height: 1.4;
+  --text-2xl: 1.5rem;        --text-2xl--line-height: 1.3333;
+  --text-3xl: 1.875rem;      --text-3xl--line-height: 1.2;
+  --text-4xl: 2.25rem;       --text-4xl--line-height: 1.1111;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing scale */
+  --spacing: 0.25rem;
+
+  /* Radius personality: soft */
+  --radius-sm: 0.3125rem;
+  --radius-md: 0.5625rem;
+  --radius-lg: 0.8125rem;
+  --radius-xl: 1.125rem;
+  --radius-full: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   Light mode
+   -------------------------------------------------------------------------- */
+[data-theme="matcha"] {
+  color-scheme: light;
+
+  --bg: #f6f9f0;
+  --surface: #ebeee5;
+  --surface-raised: #fbfcf8;
+  --border: #dbded6;
+  --text: #272826;
+  --text-muted: #71736e;
+  --ring: #537d36;
+  --primary: #537d36;
+  --primary-hover: #496e30;
+  --primary-subtle: #dce5d2;
+  --secondary: #83712f;
+  --secondary-hover: #736329;
+  --secondary-subtle: #e4e3d1;
+  --accent: #a75e52;
+  --accent-hover: #935348;
+  --accent-subtle: #e9e0d7;
+  --success: #37704b;
+  --success-subtle: #d9e5d7;
+  --warning: #7c6312;
+  --warning-subtle: #e7e5cd;
+  --error: #a8423d;
+  --error-subtle: #edddd4;
+  --info: #3b6794;
+  --info-subtle: #d9e3e3;
+
+  --shadow-sm: 0 1px 2px rgba(39, 40, 38, 0.08);
+  --shadow-md: 0 4px 14px rgba(39, 40, 38, 0.10);
+  --shadow-lg: 0 14px 36px rgba(39, 40, 38, 0.16);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode - explicit override via attribute or class
+   -------------------------------------------------------------------------- */
+[data-theme="matcha"][data-mode="dark"],
+.dark [data-theme="matcha"]:not([data-mode="light"]) {
+  color-scheme: dark;
+
+  --bg: #1b2118;
+  --surface: #262c24;
+  --surface-raised: #363c34;
+  --border: #464b44;
+  --text: #efefef;
+  --text-muted: #a4a6a3;
+  --ring: #97b682;
+  --primary: #97b682;
+  --primary-hover: #a3bf91;
+  --primary-subtle: #343f2d;
+  --secondary: #c1b47f;
+  --secondary-hover: #c8bd8e;
+  --secondary-subtle: #3c3e2d;
+  --accent: #c6978f;
+  --accent-hover: #cda39c;
+  --accent-subtle: #3d3930;
+  --success: #7fbf94;
+  --success-subtle: #314433;
+  --warning: #d9b25e;
+  --warning-subtle: #454127;
+  --error: #e28a8a;
+  --error-subtle: #46362f;
+  --info: #80aad9;
+  --info-subtle: #313f42;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.42);
+  --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.52);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode - automatic fallback to OS preference
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  [data-theme="matcha"]:not([data-mode="light"]) {
+    color-scheme: dark;
+
+    --bg: #1b2118;
+    --surface: #262c24;
+    --surface-raised: #363c34;
+    --border: #464b44;
+    --text: #efefef;
+    --text-muted: #a4a6a3;
+    --ring: #97b682;
+    --primary: #97b682;
+    --primary-hover: #a3bf91;
+    --primary-subtle: #343f2d;
+    --secondary: #c1b47f;
+    --secondary-hover: #c8bd8e;
+    --secondary-subtle: #3c3e2d;
+    --accent: #c6978f;
+    --accent-hover: #cda39c;
+    --accent-subtle: #3d3930;
+    --success: #7fbf94;
+    --success-subtle: #314433;
+    --warning: #d9b25e;
+    --warning-subtle: #454127;
+    --error: #e28a8a;
+    --error-subtle: #46362f;
+    --info: #80aad9;
+    --info-subtle: #313f42;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.42);
+    --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.52);
+  }
+}

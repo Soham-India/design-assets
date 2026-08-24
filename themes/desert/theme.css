@@ -1,0 +1,147 @@
+/* ==========================================================================
+   Desert - Sun-baked sand, terracotta and ochre. Warm, open and earthy - a canyon at noon.
+   Usage: set data-theme="desert" on <html>, <body> or any container.
+   Mode:  follows OS preference by default; force with data-mode="light"
+   ========================================================================== */
+
+:root {
+  /* Typography */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: Georgia, "Palatino Linotype", "Book Antiqua", serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+
+  --text-xs: 0.75rem;        --text-xs--line-height: 1.3333;
+  --text-sm: 0.875rem;       --text-sm--line-height: 1.4286;
+  --text-base: 1rem;         --text-base--line-height: 1.5;
+  --text-lg: 1.125rem;       --text-lg--line-height: 1.5556;
+  --text-xl: 1.25rem;        --text-xl--line-height: 1.4;
+  --text-2xl: 1.5rem;        --text-2xl--line-height: 1.3333;
+  --text-3xl: 1.875rem;      --text-3xl--line-height: 1.2;
+  --text-4xl: 2.25rem;       --text-4xl--line-height: 1.1111;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing scale */
+  --spacing: 0.25rem;
+
+  /* Radius personality: soft */
+  --radius-sm: 0.3125rem;
+  --radius-md: 0.5625rem;
+  --radius-lg: 0.8125rem;
+  --radius-xl: 1.125rem;
+  --radius-full: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   Light mode
+   -------------------------------------------------------------------------- */
+[data-theme="desert"] {
+  color-scheme: light;
+
+  --bg: #faf3e7;
+  --surface: #efe8dd;
+  --surface-raised: #fdfaf4;
+  --border: #ded8ce;
+  --text: #282725;
+  --text-muted: #726f6a;
+  --ring: #a85b37;
+  --primary: #a85b37;
+  --primary-hover: #945030;
+  --primary-subtle: #eddbcb;
+  --secondary: #8a6b26;
+  --secondary-hover: #795e21;
+  --secondary-subtle: #e8ddc8;
+  --accent: #89694f;
+  --accent-hover: #795c46;
+  --accent-subtle: #e8ddcf;
+  --success: #366d4a;
+  --success-subtle: #dce0cf;
+  --warning: #7a6111;
+  --warning-subtle: #ebe0c6;
+  --error: #a5413c;
+  --error-subtle: #f0d8cd;
+  --info: #396591;
+  --info-subtle: #dcdedb;
+
+  --shadow-sm: 0 1px 2px rgba(40, 39, 37, 0.08);
+  --shadow-md: 0 4px 14px rgba(40, 39, 37, 0.10);
+  --shadow-lg: 0 14px 36px rgba(40, 39, 37, 0.16);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode - explicit override via attribute or class
+   -------------------------------------------------------------------------- */
+[data-theme="desert"][data-mode="dark"],
+.dark [data-theme="desert"]:not([data-mode="light"]) {
+  color-scheme: dark;
+
+  --bg: #211a12;
+  --surface: #2c251e;
+  --surface-raised: #3c352e;
+  --border: #4b463f;
+  --text: #efefee;
+  --text-muted: #a6a3a0;
+  --ring: #cc987f;
+  --primary: #cc987f;
+  --primary-hover: #d2a48e;
+  --primary-subtle: #433328;
+  --secondary: #c1aa76;
+  --secondary-hover: #c8b486;
+  --secondary-subtle: #413726;
+  --accent: #b39e8d;
+  --accent-hover: #bcaa9b;
+  --accent-subtle: #3e342b;
+  --success: #7fbf94;
+  --success-subtle: #363e2f;
+  --warning: #d9b25e;
+  --warning-subtle: #493b23;
+  --error: #e18686;
+  --error-subtle: #4b302a;
+  --info: #80aad9;
+  --info-subtle: #363a3e;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.42);
+  --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.52);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode - automatic fallback to OS preference
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  [data-theme="desert"]:not([data-mode="light"]) {
+    color-scheme: dark;
+
+    --bg: #211a12;
+    --surface: #2c251e;
+    --surface-raised: #3c352e;
+    --border: #4b463f;
+    --text: #efefee;
+    --text-muted: #a6a3a0;
+    --ring: #cc987f;
+    --primary: #cc987f;
+    --primary-hover: #d2a48e;
+    --primary-subtle: #433328;
+    --secondary: #c1aa76;
+    --secondary-hover: #c8b486;
+    --secondary-subtle: #413726;
+    --accent: #b39e8d;
+    --accent-hover: #bcaa9b;
+    --accent-subtle: #3e342b;
+    --success: #7fbf94;
+    --success-subtle: #363e2f;
+    --warning: #d9b25e;
+    --warning-subtle: #493b23;
+    --error: #e18686;
+    --error-subtle: #4b302a;
+    --info: #80aad9;
+    --info-subtle: #363a3e;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.42);
+    --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.52);
+  }
+}

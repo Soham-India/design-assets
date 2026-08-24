@@ -1,0 +1,147 @@
+/* ==========================================================================
+   Slate - Cool slate blues and grays with a copper spark. Quiet, precise and modern.
+   Usage: set data-theme="slate" on <html>, <body> or any container.
+   Mode:  follows OS preference by default; force with data-mode="light"
+   ========================================================================== */
+
+:root {
+  /* Typography */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+
+  --text-xs: 0.75rem;        --text-xs--line-height: 1.3333;
+  --text-sm: 0.875rem;       --text-sm--line-height: 1.4286;
+  --text-base: 1rem;         --text-base--line-height: 1.5;
+  --text-lg: 1.125rem;       --text-lg--line-height: 1.5556;
+  --text-xl: 1.25rem;        --text-xl--line-height: 1.4;
+  --text-2xl: 1.5rem;        --text-2xl--line-height: 1.3333;
+  --text-3xl: 1.875rem;      --text-3xl--line-height: 1.2;
+  --text-4xl: 2.25rem;       --text-4xl--line-height: 1.1111;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing scale */
+  --spacing: 0.25rem;
+
+  /* Radius personality: sharp */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.1875rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.375rem;
+  --radius-full: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   Light mode
+   -------------------------------------------------------------------------- */
+[data-theme="slate"] {
+  color-scheme: light;
+
+  --bg: #f5f7f9;
+  --surface: #eaecee;
+  --surface-raised: #fafbfc;
+  --border: #dadcde;
+  --text: #272828;
+  --text-muted: #717172;
+  --ring: #4a6b8a;
+  --primary: #4a6b8a;
+  --primary-hover: #415e79;
+  --primary-subtle: #dae1e7;
+  --secondary: #5f6b7a;
+  --secondary-hover: #545e6b;
+  --secondary-subtle: #dde1e5;
+  --accent: #94665b;
+  --accent-hover: #825a50;
+  --accent-subtle: #e5e0e0;
+  --success: #376f4b;
+  --success-subtle: #d8e3df;
+  --warning: #7b6212;
+  --warning-subtle: #e6e3d5;
+  --error: #a7423d;
+  --error-subtle: #ecdbdc;
+  --info: #3a6693;
+  --info-subtle: #d8e1eb;
+
+  --shadow-sm: 0 1px 2px rgba(39, 40, 40, 0.08);
+  --shadow-md: 0 4px 14px rgba(39, 40, 40, 0.10);
+  --shadow-lg: 0 14px 36px rgba(39, 40, 40, 0.16);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode - explicit override via attribute or class
+   -------------------------------------------------------------------------- */
+[data-theme="slate"][data-mode="dark"],
+.dark [data-theme="slate"]:not([data-mode="light"]) {
+  color-scheme: dark;
+
+  --bg: #16191d;
+  --surface: #222428;
+  --surface-raised: #323538;
+  --border: #424548;
+  --text: #efefef;
+  --text-muted: #a2a3a5;
+  --ring: #899fb3;
+  --primary: #899fb3;
+  --primary-hover: #97abbc;
+  --primary-subtle: #2d343b;
+  --secondary: #979fa9;
+  --secondary-hover: #a3abb3;
+  --secondary-subtle: #303439;
+  --accent: #bd9f97;
+  --accent-hover: #c5aba3;
+  --accent-subtle: #373435;
+  --success: #7fbf94;
+  --success-subtle: #2d3e37;
+  --warning: #d9b25e;
+  --warning-subtle: #413b2b;
+  --error: #e08282;
+  --error-subtle: #423033;
+  --info: #80aad9;
+  --info-subtle: #2d3946;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.42);
+  --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.52);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode - automatic fallback to OS preference
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  [data-theme="slate"]:not([data-mode="light"]) {
+    color-scheme: dark;
+
+    --bg: #16191d;
+    --surface: #222428;
+    --surface-raised: #323538;
+    --border: #424548;
+    --text: #efefef;
+    --text-muted: #a2a3a5;
+    --ring: #899fb3;
+    --primary: #899fb3;
+    --primary-hover: #97abbc;
+    --primary-subtle: #2d343b;
+    --secondary: #979fa9;
+    --secondary-hover: #a3abb3;
+    --secondary-subtle: #303439;
+    --accent: #bd9f97;
+    --accent-hover: #c5aba3;
+    --accent-subtle: #373435;
+    --success: #7fbf94;
+    --success-subtle: #2d3e37;
+    --warning: #d9b25e;
+    --warning-subtle: #413b2b;
+    --error: #e08282;
+    --error-subtle: #423033;
+    --info: #80aad9;
+    --info-subtle: #2d3946;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.42);
+    --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.52);
+  }
+}

@@ -1,0 +1,147 @@
+/* ==========================================================================
+   Aurora - Polar night teal and violet with ice-blue shimmer. Electric, crisp and luminous.
+   Usage: set data-theme="aurora" on <html>, <body> or any container.
+   Mode:  follows OS preference by default; force with data-mode="light"
+   ========================================================================== */
+
+:root {
+  /* Typography */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+
+  --text-xs: 0.75rem;        --text-xs--line-height: 1.3333;
+  --text-sm: 0.875rem;       --text-sm--line-height: 1.4286;
+  --text-base: 1rem;         --text-base--line-height: 1.5;
+  --text-lg: 1.125rem;       --text-lg--line-height: 1.5556;
+  --text-xl: 1.25rem;        --text-xl--line-height: 1.4;
+  --text-2xl: 1.5rem;        --text-2xl--line-height: 1.3333;
+  --text-3xl: 1.875rem;      --text-3xl--line-height: 1.2;
+  --text-4xl: 2.25rem;       --text-4xl--line-height: 1.1111;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing scale */
+  --spacing: 0.25rem;
+
+  /* Radius personality: medium */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1.0rem;
+  --radius-full: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   Light mode
+   -------------------------------------------------------------------------- */
+[data-theme="aurora"] {
+  color-scheme: light;
+
+  --bg: #f2faf6;
+  --surface: #e7efeb;
+  --surface-raised: #f9fdfb;
+  --border: #d7dedb;
+  --text: #272827;
+  --text-muted: #707372;
+  --ring: #1c806e;
+  --primary: #1c806e;
+  --primary-hover: #197161;
+  --primary-subtle: #d0e6e0;
+  --secondary: #7a5fb8;
+  --secondary-hover: #6b54a2;
+  --secondary-subtle: #dfe1ec;
+  --accent: #34799c;
+  --accent-hover: #2e6a89;
+  --accent-subtle: #d4e5e8;
+  --success: #38704c;
+  --success-subtle: #d5e6dc;
+  --warning: #7d6312;
+  --warning-subtle: #e4e6d2;
+  --error: #a8433d;
+  --error-subtle: #e9deda;
+  --info: #3b6794;
+  --info-subtle: #d5e4e8;
+
+  --shadow-sm: 0 1px 2px rgba(39, 40, 39, 0.08);
+  --shadow-md: 0 4px 14px rgba(39, 40, 39, 0.10);
+  --shadow-lg: 0 14px 36px rgba(39, 40, 39, 0.16);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode - explicit override via attribute or class
+   -------------------------------------------------------------------------- */
+[data-theme="aurora"][data-mode="dark"],
+.dark [data-theme="aurora"]:not([data-mode="light"]) {
+  color-scheme: dark;
+
+  --bg: #0d1b1e;
+  --surface: #192629;
+  --surface-raised: #2a3639;
+  --border: #3b4649;
+  --text: #eeefef;
+  --text-muted: #9ea4a5;
+  --ring: #6db6a9;
+  --primary: #6db6a9;
+  --primary-hover: #7fbfb3;
+  --primary-subtle: #203a3a;
+  --secondary: #a997d1;
+  --secondary-hover: #b3a3d7;
+  --secondary-subtle: #2c3442;
+  --accent: #81b6d1;
+  --accent-hover: #90bfd7;
+  --accent-subtle: #243a42;
+  --success: #7fbf94;
+  --success-subtle: #263f38;
+  --warning: #d9b25e;
+  --warning-subtle: #3a3c2c;
+  --error: #e08080;
+  --error-subtle: #3b3134;
+  --info: #80aad9;
+  --info-subtle: #263a47;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.42);
+  --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.52);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode - automatic fallback to OS preference
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  [data-theme="aurora"]:not([data-mode="light"]) {
+    color-scheme: dark;
+
+    --bg: #0d1b1e;
+    --surface: #192629;
+    --surface-raised: #2a3639;
+    --border: #3b4649;
+    --text: #eeefef;
+    --text-muted: #9ea4a5;
+    --ring: #6db6a9;
+    --primary: #6db6a9;
+    --primary-hover: #7fbfb3;
+    --primary-subtle: #203a3a;
+    --secondary: #a997d1;
+    --secondary-hover: #b3a3d7;
+    --secondary-subtle: #2c3442;
+    --accent: #81b6d1;
+    --accent-hover: #90bfd7;
+    --accent-subtle: #243a42;
+    --success: #7fbf94;
+    --success-subtle: #263f38;
+    --warning: #d9b25e;
+    --warning-subtle: #3a3c2c;
+    --error: #e08080;
+    --error-subtle: #3b3134;
+    --info: #80aad9;
+    --info-subtle: #263a47;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.42);
+    --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.52);
+  }
+}
