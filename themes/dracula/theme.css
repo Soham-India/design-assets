@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Dracula — the iconic dark palette: purples, pinks and neon pastels
+   Usage: set data-theme="dracula" on <html>, <body> or any container.
+   Mode:  follows OS preference by default; force with data-mode="light"
+          or data-mode="dark" on the themed element (or .dark class on it
+          or any ancestor).
+   ========================================================================== */
+
+:root {
+  /* Typography */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: ui-rounded, "Hiragino Maru Gothic ProN", Quicksand, Comfortaa, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+
+  --text-xs: 0.75rem;        --text-xs--line-height: 1.3333;
+  --text-sm: 0.875rem;       --text-sm--line-height: 1.4286;
+  --text-base: 1rem;         --text-base--line-height: 1.5;
+  --text-lg: 1.125rem;       --text-lg--line-height: 1.5556;
+  --text-xl: 1.25rem;        --text-xl--line-height: 1.4;
+  --text-2xl: 1.5rem;        --text-2xl--line-height: 1.3333;
+  --text-3xl: 1.875rem;      --text-3xl--line-height: 1.2;
+  --text-4xl: 2.25rem;       --text-4xl--line-height: 1.1111;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing scale */
+  --spacing: 0.25rem;
+
+  /* Radius personality: friendly and round */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.25rem;
+  --radius-full: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   Light mode
+   -------------------------------------------------------------------------- */
+[data-theme="dracula"] {
+  color-scheme: light;
+
+  --bg: #f6f6fa;
+  --surface: #ecedf5;
+  --surface-raised: #ffffff;
+  --border: #d9dbe8;
+  --text: #23253a;
+  --text-muted: #5d6180;
+  --ring: #7a52cc;
+
+  --primary: #7a52cc;
+  --primary-hover: #6943b3;
+  --primary-subtle: #ece2fa;
+
+  --secondary: #d63ba0;
+  --secondary-hover: #bb2f8b;
+  --secondary-subtle: #fadfef;
+
+  --accent: #1596b3;
+  --accent-hover: #107e98;
+  --accent-subtle: #d9f2f6;
+
+  --success: #269d4f;
+  --success-subtle: #dcf2e2;
+  --warning: #b57e1f;
+  --warning-subtle: #f6ecd4;
+  --error: #d43a3a;
+  --error-subtle: #fadddd;
+  --info: #5b6fc4;
+  --info-subtle: #e2e6f8;
+
+  --shadow-sm: 0 1px 2px rgba(40, 42, 54, 0.10);
+  --shadow-md: 0 4px 14px rgba(40, 42, 54, 0.12);
+  --shadow-lg: 0 14px 36px rgba(40, 42, 54, 0.20);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode — explicit override via attribute or class
+   -------------------------------------------------------------------------- */
+[data-theme="dracula"][data-mode="dark"],
+.dark [data-theme="dracula"]:not([data-mode="light"]) {
+  color-scheme: dark;
+
+  --bg: #282a36;
+  --surface: #2f3140;
+  --surface-raised: #343746;
+  --border: #44475a;
+  --text: #f8f8f2;
+  --text-muted: #9ba1c2;
+  --ring: #bd93f9;
+
+  --primary: #bd93f9;
+  --primary-hover: #cba6fb;
+  --primary-subtle: #3d3554;
+
+  --secondary: #ff79c6;
+  --secondary-hover: #ff92d1;
+  --secondary-subtle: #47304a;
+
+  --accent: #8be9fd;
+  --accent-hover: #a3f0fd;
+  --accent-subtle: #2e4a56;
+
+  --success: #50fa7b;
+  --success-subtle: #274a33;
+  --warning: #ffb86c;
+  --warning-subtle: #4d4030;
+  --error: #ff5555;
+  --error-subtle: #4e2b31;
+  --info: #8fa3d9;
+  --info-subtle: #33395a;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.55);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode — automatic fallback to OS preference
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  [data-theme="dracula"]:not([data-mode="light"]) {
+    color-scheme: dark;
+
+    --bg: #282a36;
+    --surface: #2f3140;
+    --surface-raised: #343746;
+    --border: #44475a;
+    --text: #f8f8f2;
+    --text-muted: #9ba1c2;
+    --ring: #bd93f9;
+
+    --primary: #bd93f9;
+    --primary-hover: #cba6fb;
+    --primary-subtle: #3d3554;
+
+    --secondary: #ff79c6;
+    --secondary-hover: #ff92d1;
+    --secondary-subtle: #47304a;
+
+    --accent: #8be9fd;
+    --accent-hover: #a3f0fd;
+    --accent-subtle: #2e4a56;
+
+    --success: #50fa7b;
+    --success-subtle: #274a33;
+    --warning: #ffb86c;
+    --warning-subtle: #4d4030;
+    --error: #ff5555;
+    --error-subtle: #4e2b31;
+    --info: #8fa3d9;
+    --info-subtle: #33395a;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.55);
+  }
+}

@@ -2,3 +2,5 @@
 Thumbs.db
 tools/contact_sheet.png
 __pycache__/
+# regenerable via tools/screenshot-themes.ps1
+themes/screenshots/

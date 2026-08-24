@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Rose — soft rose, lavender and peach pastels, gentle and friendly
+   Usage: set data-theme="rose" on <html>, <body> or any container.
+   Mode:  follows OS preference by default; force with data-mode="light"
+          or data-mode="dark" on the themed element (or .dark class on it
+          or any ancestor).
+   ========================================================================== */
+
+:root {
+  /* Typography */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: ui-rounded, "Hiragino Maru Gothic ProN", Quicksand, Comfortaa, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+
+  --text-xs: 0.75rem;        --text-xs--line-height: 1.3333;
+  --text-sm: 0.875rem;       --text-sm--line-height: 1.4286;
+  --text-base: 1rem;         --text-base--line-height: 1.5;
+  --text-lg: 1.125rem;       --text-lg--line-height: 1.5556;
+  --text-xl: 1.25rem;        --text-xl--line-height: 1.4;
+  --text-2xl: 1.5rem;        --text-2xl--line-height: 1.3333;
+  --text-3xl: 1.875rem;      --text-3xl--line-height: 1.2;
+  --text-4xl: 2.25rem;       --text-4xl--line-height: 1.1111;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing scale */
+  --spacing: 0.25rem;
+
+  /* Radius personality: softest, friendliest */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.25rem;
+  --radius-full: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   Light mode
+   -------------------------------------------------------------------------- */
+[data-theme="rose"] {
+  color-scheme: light;
+
+  --bg: #fdf5f7;
+  --surface: #f9e8ee;
+  --surface-raised: #ffffff;
+  --border: #f0d5de;
+  --text: #4a2c38;
+  --text-muted: #96707e;
+  --ring: #d4628a;
+
+  --primary: #d4628a;
+  --primary-hover: #c04e77;
+  --primary-subtle: #fadbe6;
+
+  --secondary: #9d7bb8;
+  --secondary-hover: #8a68a6;
+  --secondary-subtle: #f0e5f7;
+
+  --accent: #e8927c;
+  --accent-hover: #d67d66;
+  --accent-subtle: #fce8e2;
+
+  --success: #5faa7f;
+  --success-subtle: #e2f0e7;
+  --warning: #d99a4e;
+  --warning-subtle: #f9eeda;
+  --error: #d96073;
+  --error-subtle: #fae0e4;
+  --info: #7fa3d9;
+  --info-subtle: #e5edf8;
+
+  --shadow-sm: 0 1px 2px rgba(74, 44, 56, 0.07);
+  --shadow-md: 0 4px 14px rgba(74, 44, 56, 0.09);
+  --shadow-lg: 0 14px 36px rgba(74, 44, 56, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode — explicit override via attribute or class
+   -------------------------------------------------------------------------- */
+[data-theme="rose"][data-mode="dark"],
+.dark [data-theme="rose"]:not([data-mode="light"]) {
+  color-scheme: dark;
+
+  --bg: #241a20;
+  --surface: #2e222b;
+  --surface-raised: #3a2b36;
+  --border: #483744;
+  --text: #f7ecf1;
+  --text-muted: #c0a3b0;
+  --ring: #ef9ab8;
+
+  --primary: #ef9ab8;
+  --primary-hover: #f3afc9;
+  --primary-subtle: #3c2530;
+
+  --secondary: #b995d4;
+  --secondary-hover: #c8abdf;
+  --secondary-subtle: #2e2440;
+
+  --accent: #f0aa94;
+  --accent-hover: #f4bfae;
+  --accent-subtle: #3c2620;
+
+  --success: #85c9a2;
+  --success-subtle: #1d3326;
+  --warning: #e5b878;
+  --warning-subtle: #362a16;
+  --error: #e58a99;
+  --error-subtle: #381c22;
+  --info: #a3c0e5;
+  --info-subtle: #1e2a3a;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.42);
+  --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.52);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode — automatic fallback to OS preference
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  [data-theme="rose"]:not([data-mode="light"]) {
+    color-scheme: dark;
+
+    --bg: #241a20;
+    --surface: #2e222b;
+    --surface-raised: #3a2b36;
+    --border: #483744;
+    --text: #f7ecf1;
+    --text-muted: #c0a3b0;
+    --ring: #ef9ab8;
+
+    --primary: #ef9ab8;
+    --primary-hover: #f3afc9;
+    --primary-subtle: #3c2530;
+
+    --secondary: #b995d4;
+    --secondary-hover: #c8abdf;
+    --secondary-subtle: #2e2440;
+
+    --accent: #f0aa94;
+    --accent-hover: #f4bfae;
+    --accent-subtle: #3c2620;
+
+    --success: #85c9a2;
+    --success-subtle: #1d3326;
+    --warning: #e5b878;
+    --warning-subtle: #362a16;
+    --error: #e58a99;
+    --error-subtle: #381c22;
+    --info: #a3c0e5;
+    --info-subtle: #1e2a3a;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.42);
+    --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.52);
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "themes": [
+    {
+      "id": "nord",
+      "displayName": "Nord",
+      "description": "Cool arctic blues and grays. Calm, professional, low-friction.",
+      "tags": ["cool", "arctic", "professional", "blue", "minimal"],
+      "modes": ["light", "dark"],
+      "files": {
+        "css": "nord/theme.css",
+        "tokens": "nord/tokens.json",
+        "tailwind": "nord/tailwind.css"
+      },
+      "swatch": ["#2e3440", "#5e81ac", "#81a1c1", "#88c0d0", "#eceff4"]
+    },
+    {
+      "id": "dracula",
+      "displayName": "Dracula",
+      "description": "The iconic dark palette — purple, pink and neon pastels on midnight.",
+      "tags": ["dark", "vibrant", "purple", "neon", "playful"],
+      "modes": ["light", "dark"],
+      "files": {
+        "css": "dracula/theme.css",
+        "tokens": "dracula/tokens.json",
+        "tailwind": "dracula/tailwind.css"
+      },
+      "swatch": ["#282a36", "#bd93f9", "#ff79c6", "#8be9fd", "#50fa7b"]
+    },
+    {
+      "id": "ember",
+      "displayName": "Ember",
+      "description": "Warm terracotta, amber and dusty rose on cream or charred brown.",
+      "tags": ["warm", "terracotta", "sunset", "cozy", "earthy"],
+      "modes": ["light", "dark"],
+      "files": {
+        "css": "ember/theme.css",
+        "tokens": "ember/tokens.json",
+        "tailwind": "ember/tailwind.css"
+      },
+      "swatch": ["#201a17", "#c05f3c", "#b97e2c", "#b25563", "#faf6f1"]
+    },
+    {
+      "id": "forest",
+      "displayName": "Forest",
+      "description": "Deep pine greens, sage and earthy ochre. Grounded and organic.",
+      "tags": ["green", "natural", "organic", "earthy", "calm"],
+      "modes": ["light", "dark"],
+      "files": {
+        "css": "forest/theme.css",
+        "tokens": "forest/tokens.json",
+        "tailwind": "forest/tailwind.css"
+      },
+      "swatch": ["#131a14", "#35753f", "#66805a", "#96702a", "#f4f7f1"]
+    },
+    {
+      "id": "ocean",
+      "displayName": "Ocean",
+      "description": "Airy teals, cyans and deep-sea blues. Fresh and modern.",
+      "tags": ["teal", "cyan", "fresh", "modern", "saas"],
+      "modes": ["light", "dark"],
+      "files": {
+        "css": "ocean/theme.css",
+        "tokens": "ocean/tokens.json",
+        "tailwind": "ocean/tailwind.css"
+      },
+      "swatch": ["#0b1d26", "#0e7490", "#2563a8", "#0899b3", "#f2f9fb"]
+    },
+    {
+      "id": "mono",
+      "displayName": "Mono",
+      "description": "Pure grayscale with sharp corners and monospace display type.",
+      "tags": ["minimal", "grayscale", "monochrome", "sharp", "brutalist"],
+      "modes": ["light", "dark"],
+      "files": {
+        "css": "mono/theme.css",
+        "tokens": "mono/tokens.json",
+        "tailwind": "mono/tailwind.css"
+      },
+      "swatch": ["#0a0a0a", "#111111", "#454545", "#8f8f8f", "#fafafa"]
+    },
+    {
+      "id": "cyberpunk",
+      "displayName": "Cyberpunk",
+      "description": "Dark-only blueprint/terminal aesthetic — abyss blacks, neon-blue glow, icy-blue accents and sharp panel cuts. Includes effects.css (keyframes, cuts, wireframe grid, blueprint scan, cyber scrollbar).",
+      "tags": ["dark", "neon", "blueprint", "terminal", "cyberpunk", "glow"],
+      "modes": ["dark"],
+      "files": {
+        "css": "cyberpunk/theme.css",
+        "tokens": "cyberpunk/tokens.json",
+        "tailwind": "cyberpunk/tailwind.css",
+        "effects": "cyberpunk/effects.css"
+      },
+      "swatch": ["#050b14", "#0088ff", "#a8c8ff", "#d5e0ff", "#8ba0b8"]
+    },
+    {
+      "id": "coffee",
+      "displayName": "Coffee",
+      "description": "Warm café neutrals — cream, caramel and espresso brown. Cozy, grounded and inviting.",
+      "tags": ["warm", "brown", "cafe", "cozy", "earthy"],
+      "modes": ["light", "dark"],
+      "files": {
+        "css": "coffee/theme.css",
+        "tokens": "coffee/tokens.json",
+        "tailwind": "coffee/tailwind.css"
+      },
+      "swatch": ["#1a1410", "#8b5e34", "#b8863b", "#9c6b52", "#faf6f0"]
+    },
+    {
+      "id": "high-contrast",
+      "displayName": "High-Contrast",
+      "description": "Accessibility-first with WCAG AAA-grade color pairs, pure black/white bases, strong borders and bold hues.",
+      "tags": ["accessible", "aaa", "contrast", "bold", "functional"],
+      "modes": ["light", "dark"],
+      "files": {
+        "css": "high-contrast/theme.css",
+        "tokens": "high-contrast/tokens.json",
+        "tailwind": "high-contrast/tailwind.css"
+      },
+      "swatch": ["#ffffff", "#0033cc", "#660099", "#b30000", "#000000"]
+    },
+    {
+      "id": "terminal",
+      "displayName": "Terminal",
+      "description": "Phosphor-green on black with classic amber accents — retro CRT hacker aesthetic. Dark-only. Includes effects.css (scanlines, vignette, phosphor glow, flicker, CRT power-on, block cursor, term scrollbar).",
+      "tags": ["green", "retro", "crt", "hacker", "terminal", "dark"],
+      "modes": ["dark"],
+      "files": {
+        "css": "terminal/theme.css",
+        "tokens": "terminal/tokens.json",
+        "tailwind": "terminal/tailwind.css",
+        "effects": "terminal/effects.css"
+      },
+      "swatch": ["#050805", "#00ff41", "#ffb000", "#7dffce", "#4a9e5c"]
+    },
+    {
+      "id": "rose",
+      "displayName": "Rose",
+      "description": "Soft rose, lavender and peach pastels. Gentle, friendly and warm — with a muted-plum dark mode.",
+      "tags": ["pastel", "pink", "soft", "friendly", "gentle"],
+      "modes": ["light", "dark"],
+      "files": {
+        "css": "rose/theme.css",
+        "tokens": "rose/tokens.json",
+        "tailwind": "rose/tailwind.css"
+      },
+      "swatch": ["#241a20", "#d4628a", "#9d7bb8", "#e8927c", "#fdf5f7"]
+    },
+    {
+      "id": "dusk",
+      "displayName": "Dusk",
+      "description": "Twilight indigo and soft lavender with an amber horizon glow. Calm, dreamy and reflective — the hour between day and night.",
+      "tags": ["twilight", "indigo", "purple", "calm", "evening"],
+      "modes": ["light", "dark"],
+      "files": {
+        "css": "dusk/theme.css",
+        "tokens": "dusk/tokens.json",
+        "tailwind": "dusk/tailwind.css"
+      },
+      "swatch": ["#14121f", "#5d55b8", "#9a90e8", "#e8a869", "#f7f6fb"]
+    }
+  ]
+}

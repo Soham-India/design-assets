@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Coffee — warm café neutrals: cream, caramel and espresso brown
+   Usage: set data-theme="coffee" on <html>, <body> or any container.
+   Mode:  follows OS preference by default; force with data-mode="light"
+          or data-mode="dark" on the themed element (or .dark class on it
+          or any ancestor).
+   ========================================================================== */
+
+:root {
+  /* Typography */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: Georgia, "Palatino Linotype", "Book Antiqua", serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+
+  --text-xs: 0.75rem;        --text-xs--line-height: 1.3333;
+  --text-sm: 0.875rem;       --text-sm--line-height: 1.4286;
+  --text-base: 1rem;         --text-base--line-height: 1.5;
+  --text-lg: 1.125rem;       --text-lg--line-height: 1.5556;
+  --text-xl: 1.25rem;        --text-xl--line-height: 1.4;
+  --text-2xl: 1.5rem;        --text-2xl--line-height: 1.3333;
+  --text-3xl: 1.875rem;      --text-3xl--line-height: 1.2;
+  --text-4xl: 2.25rem;       --text-4xl--line-height: 1.1111;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing scale */
+  --spacing: 0.25rem;
+
+  /* Radius personality: warm, soft */
+  --radius-sm: 0.3125rem;
+  --radius-md: 0.5625rem;
+  --radius-lg: 0.8125rem;
+  --radius-xl: 1.125rem;
+  --radius-full: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   Light mode
+   -------------------------------------------------------------------------- */
+[data-theme="coffee"] {
+  color-scheme: light;
+
+  --bg: #faf6f0;
+  --surface: #f1e9dd;
+  --surface-raised: #fffdf8;
+  --border: #e4d8c6;
+  --text: #2b2118;
+  --text-muted: #7d6b58;
+  --ring: #8b5e34;
+
+  --primary: #8b5e34;
+  --primary-hover: #754d29;
+  --primary-subtle: #efe2d2;
+
+  --secondary: #b8863b;
+  --secondary-hover: #9d7231;
+  --secondary-subtle: #f3e7cf;
+
+  --accent: #9c6b52;
+  --accent-hover: #855843;
+  --accent-subtle: #f2e2d8;
+
+  --success: #4a7c59;
+  --success-subtle: #e3ecdc;
+  --warning: #b5892a;
+  --warning-subtle: #f2e9cf;
+  --error: #b04a3a;
+  --error-subtle: #f4ded8;
+  --info: #4a6f8f;
+  --info-subtle: #dfe8ef;
+
+  --shadow-sm: 0 1px 2px rgba(43, 33, 24, 0.08);
+  --shadow-md: 0 4px 14px rgba(43, 33, 24, 0.10);
+  --shadow-lg: 0 14px 36px rgba(43, 33, 24, 0.16);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode — explicit override via attribute or class
+   -------------------------------------------------------------------------- */
+[data-theme="coffee"][data-mode="dark"],
+.dark [data-theme="coffee"]:not([data-mode="light"]) {
+  color-scheme: dark;
+
+  --bg: #1a1410;
+  --surface: #241b15;
+  --surface-raised: #2f241c;
+  --border: #3d3025;
+  --text: #f0e8dc;
+  --text-muted: #b3a28d;
+  --ring: #c89b6a;
+
+  --primary: #c89b6a;
+  --primary-hover: #d8ae7e;
+  --primary-subtle: #33261a;
+
+  --secondary: #d9a94e;
+  --secondary-hover: #e2ba6c;
+  --secondary-subtle: #332814;
+
+  --accent: #d9b8a0;
+  --accent-hover: #e3c9b5;
+  --accent-subtle: #332621;
+
+  --success: #7fb892;
+  --success-subtle: #1e2f24;
+  --warning: #d9b25e;
+  --warning-subtle: #332a14;
+  --error: #d97a66;
+  --error-subtle: #381812;
+  --info: #7fa3c4;
+  --info-subtle: #1a2833;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.42);
+  --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.52);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode — automatic fallback to OS preference
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  [data-theme="coffee"]:not([data-mode="light"]) {
+    color-scheme: dark;
+
+    --bg: #1a1410;
+    --surface: #241b15;
+    --surface-raised: #2f241c;
+    --border: #3d3025;
+    --text: #f0e8dc;
+    --text-muted: #b3a28d;
+    --ring: #c89b6a;
+
+    --primary: #c89b6a;
+    --primary-hover: #d8ae7e;
+    --primary-subtle: #33261a;
+
+    --secondary: #d9a94e;
+    --secondary-hover: #e2ba6c;
+    --secondary-subtle: #332814;
+
+    --accent: #d9b8a0;
+    --accent-hover: #e3c9b5;
+    --accent-subtle: #332621;
+
+    --success: #7fb892;
+    --success-subtle: #1e2f24;
+    --warning: #d9b25e;
+    --warning-subtle: #332a14;
+    --error: #d97a66;
+    --error-subtle: #381812;
+    --info: #7fa3c4;
+    --info-subtle: #1a2833;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.42);
+    --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.52);
+  }
+}

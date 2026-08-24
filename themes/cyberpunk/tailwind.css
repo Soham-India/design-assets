@@ -1,0 +1,131 @@
+/* ==========================================================================
+   Cyberpunk — Tailwind CSS v4 theme mapping
+   Requires: cyberpunk/theme.css (runtime variables).
+   Pair with cyberpunk/effects.css for keyframes, cuts, grid, scan and
+   the cyber scrollbar (the --animate-* utilities below reference the
+   keyframes defined there).
+
+     @import "tailwindcss";
+     @import "../../themes/cyberpunk/theme.css";
+     @import "../../themes/cyberpunk/tailwind.css";
+     @import "../../themes/cyberpunk/effects.css";
+
+   Set data-theme="cyberpunk" on <html> (or a container) to activate.
+   Dark-only: the theme has no light mode by design.
+   ========================================================================== */
+
+@theme inline {
+  /* Surfaces & text */
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-raised: var(--surface-raised);
+  --color-line: var(--border);
+  --color-fg: var(--text);
+  --color-muted-fg: var(--text-muted);
+
+  /* Brand */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-subtle: var(--primary-subtle);
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-subtle: var(--secondary-subtle);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-subtle: var(--accent-subtle);
+
+  /* Status */
+  --color-success: var(--success);
+  --color-success-subtle: var(--success-subtle);
+  --color-warning: var(--warning);
+  --color-warning-subtle: var(--warning-subtle);
+  --color-error: var(--error);
+  --color-error-subtle: var(--error-subtle);
+  --color-info: var(--info);
+  --color-info-subtle: var(--info-subtle);
+
+  /* Focus */
+  --color-ring: var(--ring);
+
+  /* Extras: container ladder */
+  --color-container-lowest: var(--container-lowest);
+  --color-container-low: var(--container-low);
+  --color-container-base: var(--container-base);
+  --color-container-high: var(--container-high);
+  --color-container-highest: var(--container-highest);
+
+  /* Extras: brand aliases */
+  --color-abyss: var(--abyss);
+  --color-panel: var(--panel);
+  --color-frame: var(--frame);
+  --color-neon-blue: var(--neon-blue);
+  --color-steel: var(--steel);
+  --color-icy-blue: var(--icy-blue);
+
+  /* Typography */
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+
+  --text-xs: var(--text-xs);
+  --text-sm: var(--text-sm);
+  --text-base: var(--text-base);
+  --text-lg: var(--text-lg);
+  --text-xl: var(--text-xl);
+  --text-2xl: var(--text-2xl);
+  --text-3xl: var(--text-3xl);
+  --text-4xl: var(--text-4xl);
+
+  /* Extras: display scale */
+  --text-hero-score: var(--text-hero-score);
+  --text-hero-score--line-height: var(--text-hero-score--line-height);
+  --text-hero-score--font-weight: var(--text-hero-score--font-weight);
+  --text-hero-score--letter-spacing: var(--text-hero-score--letter-spacing);
+
+  --text-headline-xl: var(--text-headline-xl);
+  --text-headline-xl--line-height: var(--text-headline-xl--line-height);
+  --text-headline-xl--font-weight: var(--text-headline-xl--font-weight);
+  --text-headline-xl--letter-spacing: var(--text-headline-xl--letter-spacing);
+
+  --text-scene-focus: var(--text-scene-focus);
+  --text-scene-focus--line-height: var(--text-scene-focus--line-height);
+  --text-scene-focus--font-weight: var(--text-scene-focus--font-weight);
+
+  --text-body-lg: var(--text-body-lg);
+  --text-body-lg--line-height: var(--text-body-lg--line-height);
+  --text-body-lg--font-weight: var(--text-body-lg--font-weight);
+
+  --text-metadata: var(--text-metadata);
+  --text-metadata--line-height: var(--text-metadata--line-height);
+  --text-metadata--font-weight: var(--text-metadata--font-weight);
+  --text-metadata--letter-spacing: var(--text-metadata--letter-spacing);
+
+  /* Radius personality */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+
+  /* Shadows */
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-glow: var(--shadow-glow);
+
+  /* Spacing scale base (enables p-4, gap-2, etc.) */
+  --spacing: var(--spacing);
+
+  /* Extras: semantic spacing */
+  --spacing-unit: var(--spacing-unit);
+  --spacing-gutter: var(--spacing-gutter);
+  --spacing-panel-padding: var(--spacing-panel-padding);
+  --spacing-margin-edge: var(--spacing-margin-edge);
+
+  /* Animations (keyframes live in effects.css) */
+  --animate-spin-slow: rotate 10s linear infinite;
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-glow: pulse-glow 4s ease-in-out infinite;
+  --animate-ai-core: pulse-glow 4s ease-in-out infinite, core-rotate 20s linear infinite;
+  --animate-fade-up: fade-up 1s ease forwards;
+  --animate-zoom-in: zoom-in 0.8s ease forwards;
+}

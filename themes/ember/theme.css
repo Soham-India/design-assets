@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Ember — warm sunset terracotta and amber, cozy and inviting
+   Usage: set data-theme="ember" on <html>, <body> or any container.
+   Mode:  follows OS preference by default; force with data-mode="light"
+          or data-mode="dark" on the themed element (or .dark class on it
+          or any ancestor).
+   ========================================================================== */
+
+:root {
+  /* Typography */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+
+  --text-xs: 0.75rem;        --text-xs--line-height: 1.3333;
+  --text-sm: 0.875rem;       --text-sm--line-height: 1.4286;
+  --text-base: 1rem;         --text-base--line-height: 1.5;
+  --text-lg: 1.125rem;       --text-lg--line-height: 1.5556;
+  --text-xl: 1.25rem;        --text-xl--line-height: 1.4;
+  --text-2xl: 1.5rem;        --text-2xl--line-height: 1.3333;
+  --text-3xl: 1.875rem;      --text-3xl--line-height: 1.2;
+  --text-4xl: 2.25rem;       --text-4xl--line-height: 1.1111;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing scale */
+  --spacing: 0.25rem;
+
+  /* Radius personality: soft, welcoming curves */
+  --radius-sm: 0.3125rem;
+  --radius-md: 0.5625rem;
+  --radius-lg: 0.8125rem;
+  --radius-xl: 1.125rem;
+  --radius-full: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   Light mode
+   -------------------------------------------------------------------------- */
+[data-theme="ember"] {
+  color-scheme: light;
+
+  --bg: #faf6f1;
+  --surface: #f3ebe2;
+  --surface-raised: #fffdf9;
+  --border: #e6dbce;
+  --text: #33261e;
+  --text-muted: #7a6a5d;
+  --ring: #c05f3c;
+
+  --primary: #c05f3c;
+  --primary-hover: #a84f2f;
+  --primary-subtle: #f6e0d7;
+
+  --secondary: #b97e2c;
+  --secondary-hover: #9d6924;
+  --secondary-subtle: #f4e7d0;
+
+  --accent: #b25563;
+  --accent-hover: #984552;
+  --accent-subtle: #f5dde1;
+
+  --success: #5f8b45;
+  --success-subtle: #e4ecd9;
+  --warning: #c08f27;
+  --warning-subtle: #f5ebd1;
+  --error: #cc4433;
+  --error-subtle: #f8ddd8;
+  --info: #4f7d94;
+  --info-subtle: #dde9ee;
+
+  --shadow-sm: 0 1px 2px rgba(51, 38, 30, 0.08);
+  --shadow-md: 0 4px 14px rgba(51, 38, 30, 0.10);
+  --shadow-lg: 0 14px 36px rgba(51, 38, 30, 0.16);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode — explicit override via attribute or class
+   -------------------------------------------------------------------------- */
+[data-theme="ember"][data-mode="dark"],
+.dark [data-theme="ember"]:not([data-mode="light"]) {
+  color-scheme: dark;
+
+  --bg: #201a17;
+  --surface: #2c2420;
+  --surface-raised: #382d27;
+  --border: #46382f;
+  --text: #f4ede6;
+  --text-muted: #bfa99a;
+  --ring: #e07856;
+
+  --primary: #e07856;
+  --primary-hover: #e88f71;
+  --primary-subtle: #43291f;
+
+  --secondary: #dfa14b;
+  --secondary-hover: #e6b267;
+  --secondary-subtle: #40331c;
+
+  --accent: #d4707e;
+  --accent-hover: #dd8894;
+  --accent-subtle: #41262b;
+
+  --success: #93b571;
+  --success-subtle: #333d24;
+  --warning: #e3b04b;
+  --warning-subtle: #42341a;
+  --error: #e06458;
+  --error-subtle: #47211e;
+  --info: #74a3ba;
+  --info-subtle: #22353e;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.42);
+  --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.52);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode — automatic fallback to OS preference
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  [data-theme="ember"]:not([data-mode="light"]) {
+    color-scheme: dark;
+
+    --bg: #201a17;
+    --surface: #2c2420;
+    --surface-raised: #382d27;
+    --border: #46382f;
+    --text: #f4ede6;
+    --text-muted: #bfa99a;
+    --ring: #e07856;
+
+    --primary: #e07856;
+    --primary-hover: #e88f71;
+    --primary-subtle: #43291f;
+
+    --secondary: #dfa14b;
+    --secondary-hover: #e6b267;
+    --secondary-subtle: #40331c;
+
+    --accent: #d4707e;
+    --accent-hover: #dd8894;
+    --accent-subtle: #41262b;
+
+    --success: #93b571;
+    --success-subtle: #333d24;
+    --warning: #e3b04b;
+    --warning-subtle: #42341a;
+    --error: #e06458;
+    --error-subtle: #47211e;
+    --info: #74a3ba;
+    --info-subtle: #22353e;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.42);
+    --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.52);
+  }
+}

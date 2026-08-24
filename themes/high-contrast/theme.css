@@ -1,0 +1,162 @@
+/* ==========================================================================
+   High-Contrast — accessibility-first, WCAG AAA-grade color pairs,
+   pure black/white bases, strong borders and bold hues
+   Usage: set data-theme="high-contrast" on <html>, <body> or any container.
+   Mode:  follows OS preference by default; force with data-mode="light"
+          or data-mode="dark" on the themed element (or .dark class on it
+          or any ancestor).
+   ========================================================================== */
+
+:root {
+  /* Typography — high x-height sans for maximum legibility */
+  --font-body: Verdana, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: Verdana, Geneva, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+
+  --text-xs: 0.75rem;        --text-xs--line-height: 1.3333;
+  --text-sm: 0.875rem;       --text-sm--line-height: 1.4286;
+  --text-base: 1rem;         --text-base--line-height: 1.5;
+  --text-lg: 1.125rem;       --text-lg--line-height: 1.5556;
+  --text-xl: 1.25rem;        --text-xl--line-height: 1.4;
+  --text-2xl: 1.5rem;        --text-2xl--line-height: 1.3333;
+  --text-3xl: 1.875rem;      --text-3xl--line-height: 1.2;
+  --text-4xl: 2.25rem;       --text-4xl--line-height: 1.1111;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing scale */
+  --spacing: 0.25rem;
+
+  /* Radius personality: crisp, functional */
+  --radius-sm: 0.1875rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.375rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   Light mode
+   -------------------------------------------------------------------------- */
+[data-theme="high-contrast"] {
+  color-scheme: light;
+
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --border: #000000;
+  --text: #000000;
+  --text-muted: #333333;
+  --ring: #0033cc;
+
+  --primary: #0033cc;
+  --primary-hover: #002299;
+  --primary-subtle: #e5eaff;
+
+  --secondary: #660099;
+  --secondary-hover: #4d0073;
+  --secondary-subtle: #f3e5fa;
+
+  --accent: #b30000;
+  --accent-hover: #8f0000;
+  --accent-subtle: #fae5e5;
+
+  --success: #006600;
+  --success-subtle: #e0f0e0;
+  --warning: #805500;
+  --warning-subtle: #f2e8d9;
+  --error: #cc0000;
+  --error-subtle: #fadada;
+  --info: #0033cc;
+  --info-subtle: #e5eaff;
+
+  --shadow-sm: 0 2px 0 rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 3px 0 rgba(0, 0, 0, 0.30);
+  --shadow-lg: 0 5px 0 rgba(0, 0, 0, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode — explicit override via attribute or class
+   -------------------------------------------------------------------------- */
+[data-theme="high-contrast"][data-mode="dark"],
+.dark [data-theme="high-contrast"]:not([data-mode="light"]) {
+  color-scheme: dark;
+
+  --bg: #000000;
+  --surface: #0d0d0d;
+  --surface-raised: #1a1a1a;
+  --border: #ffffff;
+  --text: #ffffff;
+  --text-muted: #cccccc;
+  --ring: #8ab4ff;
+
+  --primary: #8ab4ff;
+  --primary-hover: #a8c7ff;
+  --primary-subtle: #142033;
+
+  --secondary: #cc99ff;
+  --secondary-hover: #ddb3ff;
+  --secondary-subtle: #221433;
+
+  --accent: #ff9999;
+  --accent-hover: #ffb3b3;
+  --accent-subtle: #331414;
+
+  --success: #33cc33;
+  --success-subtle: #0d2818;
+  --warning: #ffcc00;
+  --warning-subtle: #332900;
+  --error: #ff3333;
+  --error-subtle: #331111;
+  --info: #8ab4ff;
+  --info-subtle: #142033;
+
+  --shadow-sm: 0 2px 0 rgba(0, 0, 0, 0.90);
+  --shadow-md: 0 3px 0 rgba(0, 0, 0, 0.92);
+  --shadow-lg: 0 5px 0 rgba(0, 0, 0, 0.95);
+}
+
+/* --------------------------------------------------------------------------
+   Dark mode — automatic fallback to OS preference
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  [data-theme="high-contrast"]:not([data-mode="light"]) {
+    color-scheme: dark;
+
+    --bg: #000000;
+    --surface: #0d0d0d;
+    --surface-raised: #1a1a1a;
+    --border: #ffffff;
+    --text: #ffffff;
+    --text-muted: #cccccc;
+    --ring: #8ab4ff;
+
+    --primary: #8ab4ff;
+    --primary-hover: #a8c7ff;
+    --primary-subtle: #142033;
+
+    --secondary: #cc99ff;
+    --secondary-hover: #ddb3ff;
+    --secondary-subtle: #221433;
+
+    --accent: #ff9999;
+    --accent-hover: #ffb3b3;
+    --accent-subtle: #331414;
+
+    --success: #33cc33;
+    --success-subtle: #0d2818;
+    --warning: #ffcc00;
+    --warning-subtle: #332900;
+    --error: #ff3333;
+    --error-subtle: #331111;
+    --info: #8ab4ff;
+    --info-subtle: #142033;
+
+    --shadow-sm: 0 2px 0 rgba(0, 0, 0, 0.90);
+    --shadow-md: 0 3px 0 rgba(0, 0, 0, 0.92);
+    --shadow-lg: 0 5px 0 rgba(0, 0, 0, 0.95);
+  }
+}
