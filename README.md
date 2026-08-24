@@ -69,7 +69,7 @@ re-run `python tools/fetch-fonts.py` to regenerate files, CSS and catalog togeth
 
 ## Themes
 
-12 pre-built UI themes in `themes/`, each with light + dark modes (except where noted). Open `themes/preview.html` in a browser to browse them all.
+17 pre-built UI themes in `themes/`, each with light + dark modes (except where noted). Open `themes/preview.html` in a browser to browse them all.
 
 | Theme   | Vibe                                        |
 |---------|---------------------------------------------|
@@ -85,6 +85,11 @@ re-run `python tools/fetch-fonts.py` to regenerate files, CSS and catalog togeth
 | Terminal | Dark-only retro CRT, phosphor-green on black |
 | Rose    | Soft rose/lavender/peach pastels, gentle    |
 | Dusk    | Twilight indigo, lavender, amber horizon glow |
+| Sakura | Cherry-blossom pinks, plum and peach. Soft, r... |
+| Desert | Sun-baked sand, terracotta and ochre. Warm, o... |
+| Aurora | Polar night teal and violet with ice-blue shi... |
+| Matcha | Whisked green tea, rice-gold and red bean. Ca... |
+| Slate | Cool slate blues and grays with a copper spar... |
 
 Each theme folder contains:
 

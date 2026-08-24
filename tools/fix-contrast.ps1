@@ -77,13 +77,15 @@ function ConvertFrom-Hex {
   return @([Convert]::ToInt32($h.Substring(0, 2), 16), [Convert]::ToInt32($h.Substring(2, 2), 16), [Convert]::ToInt32($h.Substring(4, 2), 16))
 }
 
-# mix a toward target by t (0..1)
+# mix a toward target by t (0..1); target may be a hex string or int array
 function Mix {
-  param([string]$Hex, [double]$T, [int[]]$Target)
+  param([string]$Hex, [double]$T, $Target)
+  if ($Target -is [string]) { $Target = ConvertFrom-Hex $Target }
+  $rgb = [int[]]$Target
   $a = ConvertFrom-Hex $Hex
-  $r = ($a[0] * (1 - $T)) + ($Target[0] * $T)
-  $g = ($a[1] * (1 - $T)) + ($Target[1] * $T)
-  $b = ($a[2] * (1 - $T)) + ($Target[2] * $T)
+  $r = ($a[0] * (1 - $T)) + ($rgb[0] * $T)
+  $g = ($a[1] * (1 - $T)) + ($rgb[1] * $T)
+  $b = ($a[2] * (1 - $T)) + ($rgb[2] * $T)
   return ConvertTo-Hex @($r, $g, $b)
 }
 
