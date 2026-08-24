@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Font Library Preview</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1a1a1a; --muted: #71717a;
+    --line: #e4e4e7; --card: #fafafa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111113; --fg: #f4f4f5; --muted: #9d9da8; --line: #2c2c30; --card: #1b1b1e; }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--fg);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 40px clamp(16px, 5vw, 64px); line-height: 1.5;
+  }
+  header, .group, .family { max-width: 880px; margin-left: auto; margin-right: auto; }
+  header { margin-bottom: 40px; }
+  h1 { font-size: 28px; letter-spacing: -0.02em; margin-bottom: 6px; }
+  header p { color: var(--muted); font-size: 14px; }
+  .group {
+    font-size: 13px; font-weight: 650; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--muted); margin: 44px auto 14px;
+  }
+  .family {
+    margin-bottom: 20px; padding: 26px 28px 20px;
+    border: 1px solid var(--line); border-radius: 12px; background: var(--card);
+  }
+  .meta { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+  .name { font-size: 20px; font-weight: 650; }
+  .badge {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); border: 1px solid var(--line); border-radius: 99px; padding: 2px 9px;
+  }
+  .designer { font-size: 13px; color: var(--muted); margin-left: auto; }
+  .sample { display: flex; align-items: baseline; gap: 14px; padding: 6px 0; }
+  .wt {
+    font-family: ui-monospace, monospace; font-size: 11px; color: var(--muted);
+    width: 84px; flex-shrink: 0; text-align: right;
+  }
+  .sample span:last-child { font-size: 24px; }
+  .sample.mono span:last-child { font-size: 21px; }
+  .glyphs {
+    margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line);
+    font-size: 15px; color: var(--muted); word-break: break-all;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Font Library</h1>
+  <p>19 self-hosted families &middot; 9 scripts &middot; SIL OFL 1.1 &middot; catalog in <code>fonts.json</code> &middot; re-run <code>tools/fetch-fonts.py</code> to regenerate.</p>
+</header>
+<div id="app"></div>
+
+<script>
+const GROUPS = [
+  {
+    title: "Latin essentials",
+    families: [
+      { name: "Inter", badge: "sans · UI", designer: "Rasmus Andersson",
+        rows: [["400", "The quick brown fox jumps over the lazy dog"],
+               ["500", "The quick brown fox jumps over the lazy dog"],
+               ["600", "The quick brown fox jumps over the lazy dog"],
+               ["700", "The quick brown fox jumps over the lazy dog"]],
+        glyphs: "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 !@#$%&*()" },
+      { name: "JetBrains Mono", badge: "mono · code", designer: "JetBrains", mono: true,
+        rows: [["400", "const quick = (fox) => fox.map(jump).filter(lazy);"],
+               ["700", "const quick = (fox) => fox.map(jump).filter(lazy);"]],
+        glyphs: "0O lI1 |{}[]()<>=>=<= != === >>=  il1L I| O0o S5 B8 2Z" },
+      { name: "Lora", badge: "serif · body", designer: "Cyreal",
+        rows: [["400", "The quick brown fox jumps over the lazy dog"],
+               ["400 italic", "The quick brown fox jumps over the lazy dog", "italic"],
+               ["600", "The quick brown fox jumps over the lazy dog"],
+               ["700", "The quick brown fox jumps over the lazy dog"]],
+        glyphs: "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 fi fl ff ffi ffl" },
+      { name: "Space Grotesk", badge: "display · headline", designer: "Florian Karsten",
+        rows: [["400", "Design is thinking made visual"],
+               ["500", "Design is thinking made visual"],
+               ["700", "Design is thinking made visual"]],
+        glyphs: "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ?!#&%@" },
+      { name: "Caveat", badge: "handwriting · casual", designer: "Impallari Type",
+        rows: [["400", "This looks handwritten, but it's just a font!"],
+               ["700", "This looks handwritten, but it's just a font!"]],
+        glyphs: "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ,.!?'\"-:;" },
+      { name: "Playfair Display", badge: "serif · editorial", designer: "Claus Eggers Sørensen",
+        rows: [["400", "Typography is what language looks like"],
+               ["600", "Typography is what language looks like"],
+               ["700", "Typography is what language looks like"],
+               ["800", "Typography is what language looks like"]],
+        glyphs: "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 &? fi fl" }
+    ]
+  },
+  {
+    title: "देवनागरी · Devanagari — Hindi · Marathi · Sanskrit",
+    families: [
+      { name: "Noto Sans Devanagari", badge: "sans · script", designer: "Google / Noto",
+        rows: [["400", "सूर्यास्त में आकाश नारंगी हो जाता है"],
+               ["600", "सूर्यास्त में आकाश नारंगी हो जाता है"],
+               ["400 latin", "The quick brown fox jumps over the lazy dog"]],
+        glyphs: "अ आ इ ई उ ऊ ए ऐ ओ औ क ख ग घ च छ ज झ ट ठ ड ढ ण त थ द ध न प फ ब भ म य र ल व श ष स ह क्ष त्र ज्ञ ०१२३४५६७८९" },
+      { name: "Mukta", badge: "sans · UI", designer: "Ek Type",
+        rows: [["400", "सूर्यास्त में आकाश नारंगी हो जाता है"],
+               ["700", "सूर्यास्त में आकाश नारंगी हो जाता है"],
+               ["400 latin", "The quick brown fox jumps over the lazy dog"]],
+        glyphs: "अ आ क ख ग घ ङ च छ ज झ ञ ट ठ ड ढ ण तथदधन पफबभम यरलव शषसह क्ष त्र ज्ञ ०१२३४५६७८९" },
+      { name: "Tiro Devanagari Hindi", badge: "serif · literary", designer: "Tiro Typeworks",
+        rows: [["400", "सूर्यास्त में आकाश नारंगी हो जाता है"],
+               ["400 italic", "सूर्यास्त में आकाश नारंगी हो जाता है", "italic"],
+               ["400 latin", "The quick brown fox jumps over the lazy dog"]],
+        glyphs: "अ आ क ख ग घ च छ ज झ ट ठ ड ढ ण त थ द ध न प फ ब भ म य र ल व श ष स ह ०१२३४५६७८९" },
+      { name: "Rozha One", badge: "display · headline", designer: "Indian Type Foundry",
+        rows: [["400", "सूर्यास्त में आकाश नारंगी हो जाता है"],
+               ["400 latin", "Typography is what language looks like"]],
+        glyphs: "अ आ क ख ग घ च छ ज झ ट ठ ड ढ ण त थ द ध न प फ ब भ म ०१२३४५६७८९" }
+    ]
+  },
+  {
+    title: "ଓଡ଼ିଆ · Odia",
+    families: [
+      { name: "Noto Sans Oriya", badge: "sans · script", designer: "Google / Noto",
+        rows: [["400", "ଓଡ଼ିଆ ଲିପି ସୁନ୍ଦର ଓ ସରଳ ଅଟେ"],
+               ["600", "ଓଡ଼ିଆ ଲିପି ସୁନ୍ଦର ଓ ସରଳ ଅଟେ"],
+               ["400 latin", "The quick brown fox jumps over the lazy dog"]],
+        glyphs: "ଅ ଆ ଇ ଈ ଉ ଊ ଏ ଐ ଓ ଔ କ ଖ ଗ ଘ ଚ ଛ ଜ ଝ ଟ ଠ ଡ ଢ ଣ ତ ଥ ଦ ଧ ନ ପ ଫ ବ ଭ ମ ଯ ର ଲ ଳ ଵ ଶ ଷ ସ ହ କ୍ଷ ୦୧୨୩୪୫୬୭୮୯" },
+      { name: "Baloo Bhaina 2", badge: "display · playful", designer: "Ek Type",
+        rows: [["400", "ଓଡ଼ିଆ ଲିପି ସୁନ୍ଦର ଓ ସରଳ ଅଟେ"],
+               ["700", "ଓଡ଼ିଆ ଲିପି ସୁନ୍ଦର ଓ ସରଳ ଅଟେ"],
+               ["400 latin", "Design is thinking made visual"]],
+        glyphs: "ଅ ଆ କ ଖ ଗ ଘ ଚ ଛ ଜ ଝ ଟ ଠ ଡ ଢ ଣ ତ ଥ ଦ ଧ ନ ପ ଫ ବ ଭ ମ ଯ ର ଲ ଳ ସ ହ ୦୧୨୩୪୫୬୭୮୯" }
+    ]
+  },
+  {
+    title: "More Indic scripts",
+    families: [
+      { name: "Catamaran", badge: "tamil · sans", designer: "Pria Ravichandran",
+        rows: [["400", "தமிழ் எழுத்துரு அழகான மாதிரி வரி"],
+               ["700", "தமிழ் எழுத்துரு அழகான மாதிரி வரி"],
+               ["400 latin", "The quick brown fox jumps over the lazy dog"]],
+        glyphs: "அ ஆ இ ஈ உ ஊ எ ஏ ஐ ஒ ஓ ஔ க ங ச ஞ ட ண த ந ப ம ய ர ல வ ழ ள ற ன ஜ ஶ க்ஷ ஶ்ரீ ௦௧௨௩௪௫௬௭௮௯" },
+      { name: "Hind Siliguri", badge: "bengali · sans", designer: "Indian Type Foundry",
+        rows: [["400", "বাংলা লিপির সুন্দর নমুনা লাইন"],
+               ["700", "বাংলা লিপির সুন্দর নমুনা লাইন"],
+               ["400 latin", "The quick brown fox jumps over the lazy dog"]],
+        glyphs: "অ আ ই ঈ উ ঊ এ ঐ ও ঔ ক খ গ ঘ চ ছ জ ঝ ট ঠ ড ঢ ত থ দ ধ ন প ফ ব ভ ম য র ল শ ষ স হ ড় ঢ় য় ৎ ং ঃ ঁ ০১২৩৪৫৬৭৮৯" },
+      { name: "Noto Sans Telugu", badge: "telugu · sans", designer: "Google / Noto",
+        rows: [["400", "తెలుగు లిపి అందమైన నమూనా వాక్యం"],
+               ["700", "తెలుగు లిపి అందమైన నమూనా వాక్యం"],
+               ["400 latin", "The quick brown fox jumps over the lazy dog"]],
+        glyphs: "అ ఆ ఇ ఈ ఉ ఊ ఎ ఏ ఐ ఒ ఓ ఔ క ఖ గ ఘ చ ఛ జ ఝ ట ఠ డ ఢ ణ త థ ద ధ న ప ఫ బ భ మ య ర ల వ శ ష స హ క్ష ౦౧౨౩౪౫౬౭౮౯" },
+      { name: "Noto Sans Gujarati", badge: "gujarati · sans", designer: "Google / Noto",
+        rows: [["400", "ગુજરાતી લિપિની સુંદર નમૂના લીટી"],
+               ["700", "ગુજરાતી લિપિની સુંદર નમૂના લીટી"],
+               ["400 latin", "The quick brown fox jumps over the lazy dog"]],
+        glyphs: "અ આ ઇ ઈ ઉ ઊ એ ઐ ઓ ઔ ક ખ ગ ઘ ચ છ જ ઝ ટ ઠ ડ ઢ ણ ત થ દ ધ ન પ ફ બ ભ મ ય ર લ વ શ ષ સ હ ળ ક્ષ જ્ઞ ૦૧૨૩૪૫૬૭૮૯" },
+      { name: "Noto Sans Kannada", badge: "kannada · sans", designer: "Google / Noto",
+        rows: [["400", "ಕನ್ನಡ ಲಿಪಿಯ ಸುಂದರ ಮಾದರಿ ಸಾಲು"],
+               ["700", "ಕನ್ನಡ ಲಿಪಿಯ ಸುಂದರ ಮಾದರಿ ಸಾಲು"],
+               ["400 latin", "The quick brown fox jumps over the lazy dog"]],
+        glyphs: "ಅ ಆ ಇ ಈ ಉ ಊ ಎ ಏ ಐ ಒ ಓ ಔ ಕ ಖ ಗ ಘ ಚ ಛ ಜ ಝ ಟ ಠ ಡ ಢ ಣ ತ ಥ ದ ಧ ನ ಪ ಫ ಬ ಭ ಮ ಯ ರ ಲ ವ ಶ ಷ ಸ ಹ ೦೧೨೩೪೫೬೭೮೯" },
+      { name: "Noto Sans Gurmukhi", badge: "gurmukhi · sans", designer: "Google / Noto",
+        rows: [["400", "ਗੁਰਮੁਖੀ ਲਿਪੀ ਦੀ ਸੁੰਦਰ ਨਮੂਨਾ ਲਾਈਨ"],
+               ["700", "ਗੁਰਮੁਖੀ ਲਿਪੀ ਦੀ ਸੁੰਦਰ ਨਮੂਨਾ ਲਾਈਨ"],
+               ["400 latin", "The quick brown fox jumps over the lazy dog"]],
+        glyphs: "ਅ ਆ ਇ ਈ ਉ ਊ ਏ ਐ ਓ ਔ ਕ ਖ ਗ ਘ ਙ ਚ ਛ ਜ ਝ ਞ ਟ ਠ ਡ ਢ ਣ ਤ ਥ ਦ ਧ ਨ ਪ ਫ ਬ ਭ ਮ ਯ ਰ ਲ ਵ ੜ ਸ ਹ ੦੧੨੩੪੫੬੭੮੯" },
+      { name: "Noto Sans Malayalam", badge: "malayalam · sans", designer: "Google / Noto",
+        rows: [["400", "മലയാളം ലിപിയിലെ മനോഹരമായ വരി"],
+               ["700", "മലയാളം ലിപിയിലെ മനോഹരമായ വരി"],
+               ["400 latin", "The quick brown fox jumps over the lazy dog"]],
+        glyphs: "അ ആ ഇ ഈ ഉ ഊ എ ഏ ഐ ഒ ഓ ഔ ക ഖ ഗ ഘ ച ഛ ജ ഝ ട ഠ ഡ ഢ ണ ത ഥ ദ ധ ന പ ഫ ബ ഭ മ യ ര ല വ ശ ഷ സ ഹ ള ഴ റ ന്‍ ൦൧൨൩൪൫൬൭൮൯" }
+    ]
+  }
+];
+
+const app = document.getElementById("app");
+for (const g of GROUPS) {
+  const h = document.createElement("div");
+  h.className = "group";
+  h.textContent = g.title;
+  app.appendChild(h);
+  for (const f of g.families) {
+    const sec = document.createElement("section");
+    sec.className = "family";
+    const rows = f.rows.map(([wt, text, style]) => {
+      const w = parseInt(wt);
+      return `<div class="sample${f.mono ? " mono" : ""}"><span class="wt">${wt}</span>` +
+        `<span style="font-family:'${f.name}';font-weight:${w}` +
+        `${style ? ";font-style:" + style : ""}">${text}</span></div>`;
+    }).join("");
+    sec.innerHTML =
+      `<div class="meta"><span class="name" style="font-family:'${f.name}'">${f.name}</span>` +
+      `<span class="badge">${f.badge}</span><span class="designer">${f.designer}</span></div>` +
+      rows +
+      `<div class="glyphs" style="font-family:'${f.name}'">${f.glyphs}</div>`;
+    app.appendChild(sec);
+  }
+}
+</script>
+</body>
+</html>
