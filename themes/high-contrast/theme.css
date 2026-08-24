@@ -64,11 +64,11 @@
   --accent-hover: #8f0000;
   --accent-subtle: #fae5e5;
 
-  --success: #006600;
+  --success: #005b00;
   --success-subtle: #e0f0e0;
-  --warning: #805500;
+  --warning: #694500;
   --warning-subtle: #f2e8d9;
-  --error: #cc0000;
+  --error: #960000;
   --error-subtle: #fadada;
   --info: #0033cc;
   --info-subtle: #e5eaff;
@@ -109,7 +109,7 @@
   --success-subtle: #0d2818;
   --warning: #ffcc00;
   --warning-subtle: #332900;
-  --error: #ff3333;
+  --error: #ff8080;
   --error-subtle: #331111;
   --info: #8ab4ff;
   --info-subtle: #142033;
@@ -150,7 +150,7 @@
     --success-subtle: #0d2818;
     --warning: #ffcc00;
     --warning-subtle: #332900;
-    --error: #ff3333;
+    --error: #ff8080;
     --error-subtle: #331111;
     --info: #8ab4ff;
     --info-subtle: #142033;

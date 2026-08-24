@@ -38,6 +38,35 @@ design-assets/
 - Commerce (cart, tag, gift, credit-card, wallet)
 - Devices (monitor, smartphone, printer, battery, wifi, bluetooth, power)
 
+## Fonts
+
+6 self-hosted font families in `fonts/` — latin-subset WOFF2, all SIL OFL 1.1
+(see `fonts/LICENSES.md`). Open `fonts/preview.html` in a browser to compare specimens.
+
+| Font | Category | Vibe |
+|------|----------|------|
+| Inter | Sans | Neutral screen-first UI sans, the safe default |
+| JetBrains Mono | Mono | Code-focused, tall x-height, unambiguous glyphs |
+| Lora | Serif | Contemporary serif with brushed curves, calm body text |
+| Space Grotesk | Display | Geometric grotesque with quirky details, headlines |
+| Caveat | Handwriting | Casual handwritten annotations and callouts |
+| Playfair Display | Serif | High-contrast editorial serif for large display |
+
+Quick start — link the stylesheet once, then reference by family name:
+
+```html
+<link rel="stylesheet" href="design-assets/fonts/fonts.css">
+```
+
+```css
+body { font-family: "Inter", system-ui, sans-serif; }
+code { font-family: "JetBrains Mono", monospace; }
+```
+
+Every `@font-face` uses `font-display: swap` and relative paths, so the folder is portable.
+The catalog in `fonts/fonts.json` lists each family with weights, tags and file paths;
+re-run `python tools/fetch-fonts.py` to regenerate files, CSS and catalog together.
+
 ## Themes
 
 12 pre-built UI themes in `themes/`, each with light + dark modes (except where noted). Open `themes/preview.html` in a browser to browse them all.

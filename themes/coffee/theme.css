@@ -55,21 +55,21 @@
   --primary-hover: #754d29;
   --primary-subtle: #efe2d2;
 
-  --secondary: #b8863b;
-  --secondary-hover: #9d7231;
+  --secondary: #926a2f;
+  --secondary-hover: #805d29;
   --secondary-subtle: #f3e7cf;
 
-  --accent: #9c6b52;
-  --accent-hover: #855843;
+  --accent: #95674f;
+  --accent-hover: #835b46;
   --accent-subtle: #f2e2d8;
 
-  --success: #4a7c59;
+  --success: #457353;
   --success-subtle: #e3ecdc;
-  --warning: #b5892a;
+  --warning: #85641f;
   --warning-subtle: #f2e9cf;
-  --error: #b04a3a;
+  --error: #a84637;
   --error-subtle: #f4ded8;
-  --info: #4a6f8f;
+  --info: #486b8a;
   --info-subtle: #dfe8ef;
 
   --shadow-sm: 0 1px 2px rgba(43, 33, 24, 0.08);

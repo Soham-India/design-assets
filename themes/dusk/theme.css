@@ -55,21 +55,21 @@
   --primary-hover: #4c45a3;
   --primary-subtle: #e7e5f7;
 
-  --secondary: #d98e5f;
-  --secondary-hover: #c67c4e;
+  --secondary: #9b6544;
+  --secondary-hover: #88593c;
   --secondary-subtle: #f8e9dd;
 
-  --accent: #8a6fae;
-  --accent-hover: #785c9d;
+  --accent: #7f66a1;
+  --accent-hover: #705a8e;
   --accent-subtle: #efe7f6;
 
-  --success: #4f8a6d;
+  --success: #43745c;
   --success-subtle: #e1efe7;
-  --warning: #c9922e;
+  --warning: #8a6520;
   --warning-subtle: #f6ecd4;
-  --error: #c05252;
+  --error: #a74747;
   --error-subtle: #f7dede;
-  --info: #527fb8;
+  --info: #456a9a;
   --info-subtle: #dfe9f6;
 
   --shadow-sm: 0 1px 2px rgba(42, 37, 71, 0.08);
